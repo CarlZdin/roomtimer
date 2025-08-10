@@ -6,12 +6,10 @@ class SocketController {
   handleConnection(socket, io) {
     console.log('User connected:', socket.id);
 
-    // Join a room
     socket.on('joinRoom', (roomId) => {
       socket.join(roomId);
       console.log(`User ${socket.id} joined room: ${roomId}`);
       
-      // Send current room state
       const room = this.timerService.getRoom(roomId);
       if (room) {
         socket.emit('timerUpdate', {
@@ -22,7 +20,6 @@ class SocketController {
       }
     });
 
-    // Start timer
     socket.on('startTimer', (roomId) => {
       const success = this.timerService.startTimer(roomId);
       if (success) {
@@ -36,7 +33,6 @@ class SocketController {
       }
     });
 
-    // Stop timer
     socket.on('stopTimer', (roomId) => {
       const success = this.timerService.stopTimer(roomId);
       if (success) {
@@ -50,7 +46,6 @@ class SocketController {
       }
     });
 
-    // Restart timer
     socket.on('restartTimer', (roomId) => {
       const success = this.timerService.restartTimer(roomId);
       if (success) {

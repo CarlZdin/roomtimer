@@ -91,22 +91,6 @@ class TimerService {
     }
     return false;
   }
-
-  updateRoomStates() {
-    const now = Date.now();
-    
-    this.rooms.forEach((room) => {
-      if (room.isRunning && room.lastStartTime) {
-        const elapsed = Math.floor((now - room.lastStartTime) / 1000);
-        room.timeLeft = Math.max(0, room.timeLeft - elapsed);
-        room.lastStartTime = now;
-        
-        if (room.timeLeft === 0) {
-          room.isRunning = false;
-        }
-      }
-    });
-  }
 }
 
 module.exports = TimerService;

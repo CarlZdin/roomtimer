@@ -62,12 +62,6 @@ class Room {
       lastStartTime: this.lastStartTime
     };
   }
-
-  setState(state) {
-    this.timeLeft = state.timeLeft || this.timeLeft;
-    this.isRunning = state.isRunning || false;
-    this.lastStartTime = state.lastStartTime || null;
-  }
 }
 
 module.exports = Room;

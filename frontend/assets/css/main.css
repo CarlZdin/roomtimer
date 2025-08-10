@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles */
 * {
   box-sizing: border-box;
 }
@@ -10,51 +9,4 @@
 body {
   margin: 0;
   padding: 0;
-}
-
-/* Custom component classes using Tailwind */
-@layer components {
-  .btn {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
-  }
-  
-  .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary-600 text-white hover:bg-secondary-700;
-  }
-  
-  .btn-success {
-    @apply bg-success-600 text-white hover:bg-success-700;
-  }
-  
-  .btn-danger {
-    @apply bg-danger-600 text-white hover:bg-danger-700;
-  }
-  
-  .btn-sm {
-    @apply h-9 px-3 text-xs;
-  }
-  
-  .btn-md {
-    @apply h-10 px-4 py-2;
-  }
-  
-  .btn-lg {
-    @apply h-11 px-8 text-base;
-  }
-}
-
-/* Custom animations */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
-  }
-  50% {
-    opacity: 0.7;
-    box-shadow: 0 0 30px rgba(239, 68, 68, 0.8);
-  }
 }

@@ -23,14 +23,10 @@ frontend/
 │   ├── TimerControls.vue        # Start/Stop/Restart buttons
 │   ├── RoomCard.vue             # Individual room container
 │   └── RoomsGrid.vue            # Grid layout for rooms
-├── composables/
-│   └── useSocket.ts             # Socket.IO composable
 ├── types/
 │   └── timer.ts                 # TypeScript interfaces
 ├── utils/
-│   └── timer.ts                 # Helper functions
-├── stores/
-│   └── timer.ts                 # Pinia store (ready for use)
+│   └── timer.ts                 # Helper functions       
 └── app.vue                      # Main application component
 ```
 
@@ -83,13 +79,7 @@ backend/
 - **RoomCard.vue**: Combines display and controls for a single room
 - **RoomsGrid.vue**: Layout component with loading/error states
 
-### 3. **Composables** (`composables/`)
-- **useSocket.ts**: Encapsulates Socket.IO logic
-- Reactive connection state
-- Event listener management
-- Clean API for socket operations
-
-### 4. **Utilities** (`utils/`)
+### 3. **Utilities** (`utils/`)
 - **timer.ts**: Pure functions for time formatting, alarm sounds
 - Configuration constants
 - Reusable helper functions
@@ -125,9 +115,6 @@ backend/
 
 ### Quick Start
 ```bash
-# Clone or navigate to project directory
-cd "interview question"
-
 # Install and start backend
 cd backend
 npm install
@@ -178,7 +165,6 @@ npm run dev
 
 ### REST Endpoints
 - `GET /api/rooms` - Get all room states
-- `GET /api/rooms/:roomId` - Get specific room state
 - `GET /health` - Health check
 
 ### Socket Events
@@ -188,5 +174,3 @@ npm run dev
 - `restartTimer(roomId)` - Restart room timer
 - `timerUpdate` - Receive timer updates
 - `timerFinished` - Timer reached 00:00
-
-This architecture follows industry best practices and provides a solid foundation for scaling and maintaining the application. The component-based approach makes it easy to add new features, test individual parts, and integrate modern UI frameworks.
